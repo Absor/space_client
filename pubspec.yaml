@@ -1,0 +1,7 @@
+name: space_client
+dependencies:
+  browser: any
+  siege_engine:
+    path: /home/hhaapala/dart/siege_engine
+  space_shared:
+    path: /home/hhaapala/dart/space_shared
