@@ -16,7 +16,7 @@ class ConnectionManager {
   
   _connect() {
     print("client connecting to server");
-    _ws = new WebSocket("ws://127.0.0.1:8080");
+    _ws = new WebSocket("ws://89.27.79.225:8080");
     _ws.onError.listen((e) => print("error"));
     _ws.onClose.listen((e) => print("client closed"));
     _ws.onOpen.listen((e) {
@@ -37,7 +37,6 @@ class ConnectionManager {
     } catch (error) {
       print("Error parsing JSON: $rawData");
     }
-    print(data);
 
     Type messageType = _mc.getMessageType(data);
     switch (messageType) {
