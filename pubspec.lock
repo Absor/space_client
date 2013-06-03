@@ -23,7 +23,7 @@ packages:
   space_shared:
     description:
       ref: null
-      resolved-ref: "7ee2679969bfe1b3a32fe9b9478c453874d7a9a5"
+      resolved-ref: "04de711691a19c35f512fd193d3c960c311df669"
       url: "git://github.com/Absor/space_shared.git"
     source: git
     version: "0.1.0"

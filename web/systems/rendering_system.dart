@@ -28,7 +28,7 @@ class RenderingSystem implements System {
         rotation = entity.getComponent(RotationComponent);
       } else {
         rotation = new RotationComponent();
-        rotation.angle = 0;
+        rotation.angleInDegrees = 0;
       }
       canvasManager.context.save();
       canvasManager.context.translate(
@@ -36,7 +36,7 @@ class RenderingSystem implements System {
            canvasManager.canvasDrawArea.left + canvasManager.canvasDrawArea.width / 2,
           (position.y - centerPosition.y) * canvasManager.drawScaler +
            canvasManager.canvasDrawArea.top + canvasManager.canvasDrawArea.height / 2);
-      canvasManager.context.rotate(rotation.angle);
+      canvasManager.context.rotate(rotation.angleInRadians);
       canvasManager.context.drawImageScaledFromSource(renderable.source,
           renderable.sourceX, renderable.sourceY,
           renderable.sourceWidth, renderable.sourceHeight,

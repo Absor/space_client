@@ -27,7 +27,7 @@ class WorldController {
     player.addComponent(rc);
     
     RotationComponent rotation = new RotationComponent();
-    rotation.angle = 0;
+    rotation.angleInDegrees = 0;
     player.addComponent(rotation);
     
     AccelerationComponent acceleration = new AccelerationComponent();
@@ -70,7 +70,7 @@ class WorldController {
     player.addComponent(rc);
     
     RotationComponent rotation = new RotationComponent();
-    rotation.angle = 0;
+    rotation.angleInDegrees = 0;
     player.addComponent(rotation);
     
     SplinePositionComponent spline = new SplinePositionComponent();
@@ -84,7 +84,7 @@ class WorldController {
     if (!_world.containsEntity(id)) return; // TODO should have join message before?
     Entity entity = _world.getEntityById(id);
     RotationComponent rotation = entity.getComponent(RotationComponent);
-    rotation.angle = data.r["a"];
+    rotation.angleInDegrees = data.r["a"];
     SplinePositionComponent spline = entity.getComponent(SplinePositionComponent);
     Point newPosition = new Point(data.p["x"], data.p["y"]);
     if (spline.p3 != newPosition) {
@@ -92,6 +92,7 @@ class WorldController {
       _moveSplinePoints(spline);
       spline.p3 = newPosition;
     }
+    // new guesses if the distance is too far
     spline.startTime = new DateTime.now().millisecondsSinceEpoch;
   }
   

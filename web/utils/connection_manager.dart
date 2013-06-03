@@ -16,7 +16,7 @@ class ConnectionManager {
   
   _connect() {
     print("client connecting to server");
-    _ws = new WebSocket("ws://54.217.210.121:8080");
+    _ws = new WebSocket("ws://89.27.79.225:8080");
     _ws.onError.listen((e) => print("error"));
     _ws.onClose.listen((e) => print("client closed"));
     _ws.onOpen.listen((e) {
