@@ -44,7 +44,7 @@ class ConnectionManager {
         for (String idS in data.u.keys) {
           int id = int.parse(idS);
           if (id != _playerId) {
-            _wc.internetPlayerUpdate(3, data.u[idS], _lc.oneWayLatency);
+            _wc.internetPlayerUpdate(id, data.u[idS], _lc.oneWayLatency);
           }
         }
         break;

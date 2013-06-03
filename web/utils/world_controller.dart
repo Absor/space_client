@@ -81,12 +81,14 @@ class WorldController {
   }
   
   void internetPlayerUpdate(int id, var data, num latency) {
+    if (!_world.containsEntity(id)) return; // TODO should have join message before?
     Entity entity = _world.getEntityById(id);
     RotationComponent rotation = entity.getComponent(RotationComponent);
     rotation.angle = data.r["a"];
     SplinePositionComponent spline = entity.getComponent(SplinePositionComponent);
     Point newPosition = new Point(data.p["x"], data.p["y"]);
     if (spline.p3 != newPosition) {
+      // TODO should be new position replaces last guess and new guess is made
       _moveSplinePoints(spline);
       spline.p3 = newPosition;
     }
