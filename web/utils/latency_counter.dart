@@ -9,16 +9,19 @@ class LatencyCounter {
   Map<int, int> _requests;
   int _idCounter;
   
+  num twoWayLatency;
+  num oneWayLatency;
+  
   LatencyCounter() {
     _latencies = new ListQueue();
     _requests = new HashMap<int, int>();
     _amount = 5;
     _idCounter = 0;
     _latencySum = 0;
+    twoWayLatency = 0;
+    oneWayLatency = 0;
   }
-  
-  num get latency => _latencySum / _amount;
-  
+    
   int checkoutPingId() {
     int id = _idCounter++;
     _requests[id] = new DateTime.now().millisecondsSinceEpoch;
@@ -36,6 +39,9 @@ class LatencyCounter {
     _latencies.addFirst(latency);
     _latencySum += latency;
     _latencySum -= _latencies.removeLast();
+    
+    twoWayLatency = _latencySum / _amount / 1000;
+    oneWayLatency = twoWayLatency / 2;
   }
   
   void _first(num latency) {

@@ -5,6 +5,14 @@ packages:
     description: browser
     source: hosted
     version: "0.5.9"
+  json_object:
+    description: json_object
+    source: hosted
+    version: "1.0.15+2"
+  meta:
+    description: meta
+    source: hosted
+    version: "0.5.11+1"
   siege_engine:
     description:
       ref: null
@@ -15,7 +23,7 @@ packages:
   space_shared:
     description:
       ref: null
-      resolved-ref: c28f5bfc8725c40d35884f04b9aa7cba927e935b
+      resolved-ref: "7ee2679969bfe1b3a32fe9b9478c453874d7a9a5"
       url: "git://github.com/Absor/space_shared.git"
     source: git
     version: "0.1.0"

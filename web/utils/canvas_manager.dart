@@ -11,7 +11,7 @@ class CanvasManager {
   CanvasManager(this._canvas) {
     _context = _canvas.context2D;
     _resize();
-    window.onResize.listen(_resize);
+    window.onResize.listen((e) => _resize());
   }
   
   CanvasElement get canvas => _canvas;
@@ -20,7 +20,7 @@ class CanvasManager {
   num get drawScaler => _drawScaler;
   Point get canvasMiddlePoint => _canvasMiddlePoint;
   
-  void _resize([event]) {
+  void _resize() {
     _canvas.height = window.innerHeight;
     _canvas.width = window.innerWidth;
     _calculateDrawArea();

@@ -3,6 +3,7 @@ version: 0.1.0
 author: Heikki Haapala <hhaapala@gmail.com>
 dependencies:
   browser: any
+  json_object: any
   siege_engine:
     git: git://github.com/Absor/siege_engine.git
   space_shared:
